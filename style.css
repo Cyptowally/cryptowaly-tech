@@ -1,0 +1,285 @@
+
+/* ===== GENERAL SETTINGS ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary: #0b1f3a;
+    --secondary: #1264e8;
+    --accent: #29b6f6;
+    --light: #f4f8fc;
+    --white: #ffffff;
+    --text: #344054;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    line-height: 1.7;
+    background: var(--white);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ===== NAVIGATION ===== */
+header {
+    background: var(--primary);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    max-width: 1150px;
+    margin: auto;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    color: var(--white);
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--white);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/* ===== HOMEPAGE BANNER ===== */
+.hero {
+    min-height: 520px;
+    padding: 100px 24px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(
+        120deg,
+        #0b1f3a,
+        #123f77,
+        #087ca7
+    );
+    color: var(--white);
+}
+
+.hero-content {
+    max-width: 1050px;
+    width: 100%;
+    margin: auto;
+}
+
+.eyebrow {
+    color: var(--secondary);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.hero .eyebrow {
+    color: #8de1ff;
+}
+
+.hero h1 {
+    max-width: 750px;
+    font-size: clamp(34px, 5vw, 58px);
+    line-height: 1.15;
+    margin-bottom: 24px;
+}
+
+.hero h1 span {
+    color: #8de1ff;
+}
+
+.hero-text {
+    max-width: 650px;
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #e5efff;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    display: inline-block;
+    background: var(--secondary);
+    color: var(--white);
+    padding: 13px 22px;
+    border: 2px solid var(--secondary);
+    border-radius: 6px;
+    font-weight: bold;
+    margin: 5px 8px 5px 0;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #084db5;
+    border-color: #084db5;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    border-color: var(--white);
+}
+
+.btn-outline:hover {
+    background: var(--white);
+    color: var(--primary);
+    border-color: var(--white);
+}
+
+/* ===== GENERAL SECTIONS ===== */
+.section {
+    padding: 80px 24px;
+    text-align: center;
+}
+
+.section h2 {
+    color: var(--primary);
+    font-size: clamp(27px, 4vw, 36px);
+    line-height: 1.3;
+    margin-bottom: 25px;
+}
+
+.section-text {
+    max-width: 780px;
+    margin: 0 auto 18px;
+}
+
+/* ===== SERVICES ===== */
+.services-section {
+    background: var(--light);
+}
+
+.services-grid {
+    max-width: 1100px;
+    margin: 40px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    text-align: left;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #e1e9f2;
+    box-shadow: 0 5px 18px rgba(11, 31, 58, 0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(11, 31, 58, 0.12);
+}
+
+.service-icon {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.service-card h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+/* ===== WHY CHOOSE US ===== */
+.features {
+    max-width: 700px;
+    margin: 30px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    text-align: left;
+}
+
+.features p {
+    background: var(--light);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* ===== CONTACT ===== */
+.contact-section {
+    background: #eaf4ff;
+}
+
+.contact-note {
+    margin-top: 18px;
+    font-size: 13px;
+    color: #58677a;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 14px;
+}
+
+/* ===== MOBILE RESPONSIVENESS ===== */
+@media (max-width: 650px) {
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px 18px;
+    }
+
+    .hero {
+        min-height: 450px;
+        padding: 75px 22px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+    .services-grid,
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 60px 20px;
+    }
+
+    .service-card {
+        padding: 24px;
+    }
+}
