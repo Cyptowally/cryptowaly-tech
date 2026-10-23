@@ -208,6 +208,89 @@ header {
     margin-bottom: 10px;
 }
 
+/* ===== ELECTRICAL GALLERY ===== */
+.gallery-section {
+    background: #e7f1f4;
+}
+
+.gallery-grid {
+    max-width: 1120px;
+    margin: 38px auto 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    grid-template-rows: repeat(3, 175px);
+    gap: 16px;
+    text-align: left;
+}
+
+.gallery-item {
+    position: relative;
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+    background: #163548;
+    border-radius: 5px;
+    isolation: isolate;
+}
+
+.gallery-item-featured {
+    grid-row: span 2;
+}
+
+.gallery-item::after {
+    position: absolute;
+    z-index: 1;
+    inset: 35% 0 0;
+    background: linear-gradient(transparent, rgba(5, 21, 32, 0.88));
+    content: "";
+    pointer-events: none;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.045);
+}
+
+.gallery-item figcaption {
+    position: absolute;
+    z-index: 2;
+    right: 18px;
+    bottom: 15px;
+    left: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    color: var(--white);
+}
+
+.gallery-item figcaption span {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.gallery-item-featured figcaption span {
+    font-size: 23px;
+}
+
+.gallery-item figcaption a {
+    color: #d6e9f2;
+    font-size: 12px;
+}
+
+.gallery-item figcaption a:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+
 /* ===== WHY CHOOSE US ===== */
 .features {
     max-width: 700px;
@@ -233,6 +316,200 @@ header {
     margin-top: 18px;
     font-size: 13px;
     color: #58677a;
+}
+
+/* ===== PHOTO EDITOR ===== */
+.editor-section {
+    background: #f4f8fc;
+}
+
+.editor {
+    max-width: 1050px;
+    margin: 38px auto 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(250px, 0.8fr);
+    text-align: left;
+    background: var(--white);
+    border: 1px solid #dce5ee;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 28px rgba(11, 31, 58, 0.08);
+}
+
+.editor-workspace {
+    min-width: 0;
+    padding: 22px;
+    background: #e8edf1;
+}
+
+.upload-area {
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    border: 2px dashed #98a8b7;
+    border-radius: 6px;
+    background: #f8fafb;
+    color: var(--primary);
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.upload-area:hover,
+.upload-area.is-dragging {
+    border-color: var(--secondary);
+    background: #edf5ff;
+}
+
+.upload-mark {
+    color: var(--secondary);
+    font-size: 40px;
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.upload-area strong {
+    font-size: 18px;
+}
+
+.upload-limit {
+    margin-top: 12px;
+    color: #637283;
+    font-size: 13px;
+}
+
+#photo-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
+
+.upload-area:focus-within {
+    outline: 3px solid var(--secondary);
+}
+
+.photo-preview {
+    min-height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #17232d;
+    background-image: linear-gradient(45deg, #26333e 25%, transparent 25%), linear-gradient(-45deg, #26333e 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #26333e 75%), linear-gradient(-45deg, transparent 75%, #26333e 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+}
+
+.photo-preview[hidden],
+.upload-area[hidden] {
+    display: none;
+}
+
+.photo-preview img {
+    display: block;
+    max-width: 100%;
+    max-height: 60vh;
+    object-fit: contain;
+    transition: filter 0.12s ease;
+}
+
+.editor-status {
+    min-height: 24px;
+    padding-top: 10px;
+    color: #536273;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.editor-controls {
+    padding: 24px;
+}
+
+.control-heading,
+.slider-control > span,
+.editor-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.control-heading {
+    margin-bottom: 26px;
+}
+
+.control-heading h3 {
+    color: var(--primary);
+    font-size: 19px;
+}
+
+.text-button {
+    padding: 5px 0;
+    border: 0;
+    background: transparent;
+    color: var(--secondary);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.text-button:disabled {
+    color: #9aa7b4;
+    cursor: not-allowed;
+}
+
+.slider-control {
+    display: block;
+    margin: 22px 0;
+    color: #263746;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.slider-control output {
+    color: #526475;
+    font-variant-numeric: tabular-nums;
+}
+
+.slider-control input {
+    width: 100%;
+    margin: 12px 0 0;
+    accent-color: var(--secondary);
+}
+
+.editor-actions {
+    justify-content: flex-start;
+    margin-top: 30px;
+}
+
+.icon-button {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    border: 1px solid #cbd5df;
+    border-radius: 6px;
+    background: var(--white);
+    color: var(--primary);
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.icon-button:disabled,
+.download-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.download-button {
+    margin: 0;
+    text-align: center;
 }
 
 /* ===== FOOTER ===== */
@@ -273,6 +550,30 @@ footer {
     .services-grid,
     .features {
         grid-template-columns: 1fr;
+    }
+
+    .editor {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+    }
+
+    .gallery-item,
+    .gallery-item-featured {
+        grid-row: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .editor-workspace {
+        padding: 14px;
+    }
+
+    .upload-area,
+    .photo-preview {
+        min-height: 260px;
     }
 
     .section {

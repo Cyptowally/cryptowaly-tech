@@ -27,6 +27,8 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#photo-studio">Photo Studio</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -131,6 +133,110 @@
                     </p>
                 </article>
 
+            </div>
+        </section>
+
+        <section id="gallery" class="section gallery-section">
+            <p class="eyebrow">ELECTRICAL DETAILS</p>
+            <h2>Power, light &amp; precision</h2>
+            <p class="section-text">
+                Explore electrical systems, modern lighting and the fine details behind reliable technology.
+            </p>
+
+            <div class="gallery-grid">
+                <figure class="gallery-item gallery-item-featured">
+                    <img
+                        src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=85&amp;w=1400&amp;auto=format&amp;fit=crop"
+                        alt="Colorful wiring and circuit breakers arranged inside an electrical control panel"
+                        loading="lazy"
+                        decoding="async">
+                    <figcaption>
+                        <span>Control panels &amp; wiring</span>
+                        <a href="https://unsplash.com/photos/kK7uPfb2YWU" target="_blank" rel="noopener noreferrer">Photo by Markus Spiske</a>
+                    </figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img
+                        src="https://images.unsplash.com/photo-1545164415-0fae860defbd?q=85&amp;w=1000&amp;auto=format&amp;fit=crop"
+                        alt="Modern LED lighting glowing against a dark background"
+                        loading="lazy"
+                        decoding="async">
+                    <figcaption>
+                        <span>Modern LED lighting</span>
+                        <a href="https://unsplash.com/photos/lwwM_dotpcs" target="_blank" rel="noopener noreferrer">Photo by Justin Lane</a>
+                    </figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img
+                        src="https://images.unsplash.com/photo-1651340550839-3b295d930048?q=85&amp;w=1000&amp;auto=format&amp;fit=crop"
+                        alt="Detailed close-up of electronic components on a circuit board"
+                        loading="lazy"
+                        decoding="async">
+                    <figcaption>
+                        <span>Circuit design details</span>
+                        <a href="https://unsplash.com/photos/6BCgNl-UY6A" target="_blank" rel="noopener noreferrer">Photo by Anne Nygård</a>
+                    </figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img
+                        src="https://images.unsplash.com/photo-1682345262055-8f95f3c513ea?q=85&amp;w=1000&amp;auto=format&amp;fit=crop"
+                        alt="Electrician wearing work gloves handling electrical wires"
+                        loading="lazy"
+                        decoding="async">
+                    <figcaption>
+                        <span>Careful installation work</span>
+                        <a href="https://unsplash.com/photos/U3GiK1u5j24" target="_blank" rel="noopener noreferrer">Photo by Jimmy Nilsson Masth</a>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="photo-studio" class="section editor-section">
+            <p class="eyebrow">QUICK PHOTO EDITOR</p>
+            <h2>Make a few adjustments</h2>
+            <p class="section-text">
+                Choose a picture to preview edits in your browser, then download the finished image.
+                Your picture is not uploaded or stored by this website.
+            </p>
+
+            <div class="editor" aria-label="Photo editor">
+                <div class="editor-workspace">
+                    <label class="upload-area" id="drop-area" for="photo-input">
+                        <span class="upload-mark" aria-hidden="true">＋</span>
+                        <strong>Choose a photo</strong>
+                        <span>or drag and drop an image here</span>
+                        <span class="upload-limit">JPG, PNG, GIF, WebP · up to 20 MB</span>
+                        <input id="photo-input" type="file" accept="image/*">
+                    </label>
+                    <div class="photo-preview" id="photo-preview" hidden>
+                        <img id="photo-image" alt="Your photo preview">
+                    </div>
+                    <p class="editor-status" id="editor-status" role="status" aria-live="polite">No photo selected</p>
+                </div>
+
+                <div class="editor-controls">
+                    <div class="control-heading">
+                        <h3>Adjustments</h3>
+                        <button class="text-button" id="reset-photo" type="button" disabled>Reset</button>
+                    </div>
+                    <label class="slider-control" for="brightness">
+                        <span>Brightness <output id="brightness-value">100%</output></span>
+                        <input id="brightness" type="range" min="0" max="200" value="100" disabled>
+                    </label>
+                    <label class="slider-control" for="contrast">
+                        <span>Contrast <output id="contrast-value">100%</output></span>
+                        <input id="contrast" type="range" min="0" max="200" value="100" disabled>
+                    </label>
+                    <label class="slider-control" for="saturation">
+                        <span>Saturation <output id="saturation-value">100%</output></span>
+                        <input id="saturation" type="range" min="0" max="200" value="100" disabled>
+                    </label>
+                    <div class="editor-actions">
+                        <label class="text-button" for="photo-input">Change photo</label>
+                        <button class="icon-button" id="rotate-photo" type="button" title="Rotate photo 90 degrees" aria-label="Rotate photo 90 degrees" disabled>↻</button>
+                        <button class="btn download-button" id="download-photo" type="button" disabled>Download photo</button>
+                    </div>
+                </div>
             </div>
         </section>
 
